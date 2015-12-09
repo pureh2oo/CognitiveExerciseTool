@@ -1,0 +1,38 @@
+	*** OLIMEX demo project for the MOD-LED8X8R ***
+
+1. Requirements
+	- LaunchPad MSP-EXP430G2 by Texas Instruments
+	- MSP430-LED-BOOSTERPACK demo board by Olimex
+	- One or more MOD-LED8X8R matrix by Olimex
+	- IAR for MSP 5.10 IDE  (or newer version) by IAR
+	- miniUSB cable connected to a PC
+
+2. Description
+	The demo demonstrates the functionality of the various of features including:
+	- Serial Peripheral Interface
+	- Button
+	- LED matrix
+	- Timer A
+	- Interrupts
+	
+	Upon power up the user is presented the first few symbols of the welcome message ("www.olimex.com/dev " by default).
+	By pressing the button (P1.3) you will slide the text left or right depending on the defined macros (left by default).
+	In order to affect the board you can change some of the settings by modifying the following macros placed in "main.h" header file:
+	TEXT 			-	This is the displayed message. You can put here any valid string with max length 835 symblos.
+	SLIDE_DIRECTION	-	Direction of the message sliding. Possible values: Right (0); Left (1).
+	MATRIX_COUNT 	-	Select the number of the connected matrices.
+	PERIOD			-	Time interval of interruption entry. For more matrices it's important this period to be higher (to avoid
+						permanent interruptions) because the interrupt requires more time to complete his tasks.
+	DELAY_TIME		-	Simple delay time to decrease speed of sliding. It's all your choice to select this value.
+	
+	For 1-4 LED matrices (MATRIX_COUNT) there are default values of the macros PERIOD and DELAY_TIME which of course can be modified.
+	For another value of MATRIX_COUNT you should select the proper value of the macros PERIOD and DELAY_TIME.
+	
+3. How to use this demo
+	Open "\MOD-LED8X8\Demo\MOD-LED_8X8.eww", make/build project and program the board.
+	Project Options:
+	General Options - Device: MSP430G2231
+	Debugger - Driver: FET Debugger --> Texas Instruments USB-IF
+
+4. Support
+	http://www.olimex.com/dev/
